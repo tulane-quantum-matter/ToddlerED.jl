@@ -42,8 +42,9 @@ using Test
 
     # anticommutator between majorana
     for mm = 1:4
-        @test let i = rm(), j = rm()
-            (i == j ? 2 : 0)I == anticomm(dirac(i, nm, nspin), dirac(j, nm, nspin))
+        @test let i = rm(), j = rm(), k
+            k = (i == j ? 2 : 0);
+            k*I == anticomm(dirac(i, nm, nspin), dirac(j, nm, nspin))
         end
     end
 
