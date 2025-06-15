@@ -6,7 +6,7 @@ Simple code for exact-diagonalization calculations with some number of (majorana
 
 Operators built up from tensor products of Pauli / Clifford algebra matrices.
 
-Immediate predecessor is baby-ED by J,S-K.
+Immediate predecessor to this package is the Baby-ED by J,S-K.
 
 ## Installation
 
