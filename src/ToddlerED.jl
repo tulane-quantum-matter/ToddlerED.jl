@@ -22,7 +22,6 @@ module ToddlerED
 # Import necessary libraries
 using LinearAlgebra
 using SparseArrays
-using Arpack # gives eigs
 
 export dirac, spinop, spinx, spiny, spinz, spin0, anticomm, comm
 export load_accelerated_libraries
