@@ -48,7 +48,7 @@ macro load_accelerated_libraries()
     end
 end
 
-# Define Pauli matrices as sparse matrices
+# Pauli matrices
 const σ₀ = sparse(ComplexF64[1 0; 0 1])
 const σ₁ = sparse(ComplexF64[0 1; 1 0])
 const σ₂ = sparse(ComplexF64[0 -im; im 0])
