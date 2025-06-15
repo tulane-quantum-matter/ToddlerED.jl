@@ -10,23 +10,15 @@ using Test
     rs = () -> mod1(rand(Int), nspin)
 
     # spin operator clifford algebra
-    @test 2I == let g = rs()
-        anticomm(spinop(1, g, nspin, nm), spinop(1, g, nspin, nm))
+    for mm = 1:3
+        @test 2I == let g = rs()
+            anticomm(spinop(mm, g, nspin, nm), spinop(mm, g, nspin, nm))
+        end
     end
-    @test 2I == let g = rs()
-        anticomm(spinop(2, g, nspin, nm), spinop(2, g, nspin, nm))
-    end
-    @test 2I == let g = rs()
-        anticomm(spinop(3, g, nspin, nm), spinop(3, g, nspin, nm))
-    end
-    @test 0I == let g = rs()
-        anticomm(spinop(1, g, nspin, nm), spinop(2, g, nspin, nm))
-    end
-    @test 0I == let g = rs()
-        anticomm(spinop(2, g, nspin, nm), spinop(3, g, nspin, nm))
-    end
-    @test 0I == let g = rs()
-        anticomm(spinop(3, g, nspin, nm), spinop(1, g, nspin, nm))
+    for mm = 1:3
+        @test 0I == let g = rs()
+            anticomm(spinop(mm, g, nspin, nm), spinop(mod1(mm + 1, 3), g, nspin, nm))
+        end
     end
 
     # spin operator su2 algebra
@@ -36,11 +28,10 @@ using Test
         end
     end
 
-
     @test let i = rm()
-        2I == anticomm(dirac(i, nm, nspin), dirac(i, nm, nspin))
+        2I == anticomm(dirac(i, nm, nspin), dirac(i, nm, nspin)) &&
+            2I == anticomm(dirac(mod1(i + 1, nm), nm, nspin), dirac(mod1(i + 1, nm), nm, nspin))
     end
-
 
     # commutator between spin operators
     for mm = 1:4
