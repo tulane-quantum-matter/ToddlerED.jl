@@ -1,3 +1,22 @@
+"""
+# ToddlerED
+
+Simple Julia package for exact diagonalization, with some number of (majorana) fermion and spin-1/2 operators.
+User need to provide the number of Majoranas (`nm`) and spins (`nspin`) for low-level functions dirac and spinop.
+
+### Fermionic Majorana Operators
+- `dirac(i, n, nspin=0)`: Construct the i-th Majorana operator
+- `fermion_creation(i, nm)`, `fermion_annihilation(i, nm)`: example shorthands for complex fermions.
+
+### Spin Operators
+- `spinop(s, i, nspin, nm=0)`: General spin-1/2 operator constructor, s = 0,1,2,3,4 for σ₀, σ₁, σ₂, σ₃, σ₀
+- `spinx`, `spiny`, `spinz`, `spin0`: shorthands for spin operator
+
+### Auxiliary Functions
+- `anticomm(x, y)`: Compute the anticommutator {x,y} = xy + yx
+- `comm(x, y)`: Compute the commutator [x,y] = xy - yx
+- `@load_accelerated_libraries`: Macro to detect CPU and load optimized linear algebra libraries
+"""
 module ToddlerED
 
 # Import necessary libraries
