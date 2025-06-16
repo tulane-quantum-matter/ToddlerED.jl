@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/tulane-quantum-matter/ToddlerED.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/tulane-quantum-matter/ToddlerED.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
-Simple code for exact-diagonalization calculations with some number of (majorana) fermion and spin-1/2 operators, respectively `dirac` and `spinop`.
+Simple and naive code for exact-diagonalization calculations with some number of (majorana) fermion and spin-1/2 operators, respectively `dirac` and `spinop`.
 
 Operators built up from tensor products of Pauli / Clifford algebra matrices.
 
@@ -15,7 +15,7 @@ using Pkg;
 Pkg.add(url="https://github.com/tulane-quantum-matter/ToddlerED.jl")
 ```
 
-## Example
+## Simple example
 
 Solving the t-V model in 1D chain.
 $$ H = -t \sum_i c_i^\dagger c_{i+1} + V (n_i-1/2) (n_{i+1}-1/2) $$
