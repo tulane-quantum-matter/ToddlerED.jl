@@ -12,7 +12,8 @@ Immediate predecessor to this package is the Baby-ED by J,S-K.
 
 ```julia
 using Pkg;
-Pkg.add(url="https://github.com/tulane-quantum-matter/ToddlerED.jl")
+Pkg.add ToddlerED
+# or Pkg.add(url="https://github.com/tulane-quantum-matter/ToddlerED.jl")
 ```
 
 ## Simple example
